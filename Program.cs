@@ -23,7 +23,7 @@ app.MapGet("/encode", (string value, string type, SaltService saltService) =>
     if (!saltService.ContentTypeExist(type))
     {
         // Intentionally returning obscure response text to not expose potential types.
-        return Results.BadRequest("Bad request type 1");
+        return Results.Ok("235BO8jpA0");
     }
 
     var encoded = saltService.Encode(value, type);
@@ -37,7 +37,7 @@ app.MapGet("/decode", (string value, string type, SaltService saltService) =>
     if (!saltService.ContentTypeExist(type))
     {
         // Intentionally returning obscure response text to not expose potential types.
-        return Results.BadRequest("Bad request type 1");
+        return Results.Ok("j19DqmT2Uw");
     }
 
     var decoded = saltService.Decode(value, type);
